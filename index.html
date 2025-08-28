@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaidehi & Aryan</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Dancing Script for headings, Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Define custom fonts */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-handwriting {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        /* Soft gradient background */
+        body {
+            background: linear-gradient(135deg, #fce7f3, #ede9fe, #ffffff);
+            overflow-x: hidden;
+        }
+
+        /* Hearts container to cover the whole screen */
+        #hearts-container {
+            position: fixed; /* Changed from absolute to fixed */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -10;
+            overflow: hidden;
+        }
+
+        /* Subtle floating hearts animation */
+        @keyframes floatHearts {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            opacity: 0;
+            animation: floatHearts 25s infinite linear;
+            transform: rotate(-45deg);
+            /* Start hearts from the bottom of the screen */
+            bottom: -50px; 
+        }
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(255, 179, 186, 0.6); /* Soft pink color */
+        }
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+        .heart::after {
+            top: 0;
+            left: 10px;
+        }
+        
+        /* Fade-in animation for sections */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Music player style */
+        #music-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 50;
+        }
+    </style>
+</head>
+<body class="text-gray-700 antialiased relative">
+
+    <!-- Container for animated hearts -->
+    <div id="hearts-container"></div>
+    
+    <!-- Background Music Player -->
+    <audio id="background-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div id="music-player">
+        <button id="music-toggle" class="w-12 h-12 bg-white/80 backdrop-blur-md text-purple-500 rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform">
+            <i id="music-icon" class="fas fa-play"></i>
+        </button>
+    </div>
+
+
+    <!-- Main Header -->
+    <header class="h-screen flex flex-col items-center justify-center text-center p-4">
+        <h1 class="font-handwriting text-6xl md:text-8xl text-purple-500 drop-shadow-lg">
+            Vaidehi <span class="text-pink-400">&amp;</span> Aryan
+        </h1>
+        <p class="mt-4 text-lg md:text-xl text-gray-500">A story written in the stars.</p>
+        <a href="#about-us" class="absolute bottom-10 animate-bounce">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </a>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 space-y-16">
+
+        <!-- About Us Section -->
+        <section id="about-us" class="fade-in-section flex justify-center">
+             <div class="w-full max-w-4xl bg-white/70 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-gray-200/50">
+                <h2 class="font-handwriting text-4xl text-purple-500 mb-4 text-center">Our Story</h2>
+                
+                <p class="text-lg leading-relaxed text-center">
+                    It all began in the most unexpected place—a Telegram channel for Genshin Impact. I was in the middle of a silly argument when she noticed me. A simple, random "hi" from her changed everything. I playfully asked for proof it was really her, and she shared her Instagram. We started talking, playing truth or dare, and even though we stopped talking for a month, something pulled us back. We opened up, shared personal stories, and then she told me I didn't understand her feelings. When I finally asked if she liked me, her "Hmm" was the sweetest 'yes' I've ever heard. Our love story is my favorite, and damn, I love her so much.
+                </p>
+            </div>
+        </section>
+
+        <!-- A Special Note Section -->
+        <section id="special-note" class="fade-in-section text-center">
+            <div class="max-w-3xl mx-auto bg-white/70 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-gray-200/50">
+                <h2 class="font-handwriting text-4xl text-purple-500 mb-4">A Special Note</h2>
+                <p class="text-lg text-gray-600 mb-6">
+                    More than just words, this is a promise. It's what my heart says every time I think of you, every time you smile, and every moment we share together. This is for you, Vaidehi.
+                </p>
+                <p class="text-2xl italic text-pink-500 font-semibold leading-relaxed">
+                    "i love you vaidehi, sachi me i loveeeee you sooooo muchhhhh, mera chotu saaaa babyyyy i loveeeeeeeeee youuuuuuuuuuuuuuuu"
+                </p>
+            </div>
+        </section>
+
+        <!-- Interactive Feature Section -->
+        <section id="interactive-feature" class="fade-in-section text-center py-16">
+            <h2 class="font-handwriting text-4xl text-purple-500 mb-4">Another Note For You?</h2>
+            <p class="text-lg text-gray-600 mb-8">Click the button for another little surprise from Aryan!</p>
+            
+            <button id="message-button" class="bg-gradient-to-r from-pink-400 to-purple-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transform transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-purple-300">
+                Show me some love
+            </button>
+
+            <div id="message-display" class="mt-8 min-h-[80px] flex items-center justify-center p-4">
+                <p id="random-message-text" class="text-xl italic text-purple-600 transition-opacity duration-500 opacity-0"></p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-gray-500">
+        <p>Made with love for Vaidehi & Aryan</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Floating Hearts Animation ---
+            const heartsContainer = document.getElementById('hearts-container');
+            const heartCount = 25;
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                const size = Math.random() * 15 + 10;
+                heart.style.width = `${size}px`;
+                heart.style.height = `${size}px`;
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.animationDelay = `${Math.random() * 25}s`;
+                heart.style.animationDuration = `${Math.random() * 20 + 15}s`;
+                heartsContainer.appendChild(heart);
+            }
+
+            // --- Background Music Control ---
+            const music = document.getElementById('background-music');
+            const musicToggle = document.getElementById('music-toggle');
+            const musicIcon = document.getElementById('music-icon');
+            let isPlaying = false;
+
+            musicToggle.addEventListener('click', () => {
+                if (isPlaying) {
+                    music.pause();
+                    musicIcon.classList.remove('fa-pause');
+                    musicIcon.classList.add('fa-play');
+                } else {
+                    music.play();
+                    musicIcon.classList.remove('fa-play');
+                    musicIcon.classList.add('fa-pause');
+                }
+                isPlaying = !isPlaying;
+            });
+
+            // --- Random Message Generator ---
+            const randomMessages = [
+                "i love you vaidehi, sachi me i loveeeee you sooooo muchhhhh, mera chotu saaaa babyyyy i loveeeeeeeeee youuuuuuuuuuuuuuuu",
+                "You have the most beautiful soul, bachhu.", "I fall for you more every single day, babe.", "Being with you feels like coming home.",
+                "You're not just my love, you're my best friend, baibee.", "Every love song makes me think of you.", "My heart is, and always will be, yours.",
+                "You are my greatest adventure, babe.", "I love you more than all the stars in the sky, bachhu."
+            ];
+
+            const messageButton = document.getElementById('message-button');
+            const messageText = document.getElementById('random-message-text');
+            let lastMessageIndex = -1;
+
+            messageButton.addEventListener('click', () => {
+                let randomIndex;
+                do { randomIndex = Math.floor(Math.random() * randomMessages.length); } while (randomIndex === lastMessageIndex);
+                lastMessageIndex = randomIndex;
+                const newMessage = randomMessages[randomIndex];
+                messageText.style.opacity = '0';
+                setTimeout(() => {
+                    messageText.textContent = `"${newMessage}"`;
+                    messageText.style.opacity = '1';
+                }, 500);
+            });
+            
+            // --- Fade-in sections on scroll ---
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+</body>
+</html>
